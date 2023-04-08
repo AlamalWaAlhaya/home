@@ -1,0 +1,222 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  font-size: 20px;
+}
+
+h2 {
+  white-space: nowrap;
+  font-size: 25px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.main-ul {
+  display: flex;
+
+  margin-top: 10px;
+  z-index: 2;
+}
+
+li {
+  margin: 5px 20px;
+  cursor: pointer;
+  list-style: none;
+}
+
+li:hover {
+   color: rgb(70, 108, 224);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h3 {
+  position: relative;
+  bottom: 70px;
+  display: none;
+  z-index: 3;
+  cursor: pointer;
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+  font-size: 75px;
+}
+
+section {
+  padding: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  overflow: hidden;
+}
+
+.main button {
+  padding: 20px 80px;
+  border: none;
+  font-size: 20px;
+  background-color: rgb(203, 209, 229);
+  color: black;
+  z-index: 2;
+  transition-duration:0.3s ;
+  white-space: nowrap;
+}
+
+.main button:hover {
+  transform: scale(1.1);
+}
+
+.dec1 {
+  position: absolute;
+  left: -150px;
+  width: 600px;
+  height: 1000px;
+  transform: rotate(160deg);
+  background-color: rgb(171, 185, 228);
+}
+
+.dec2 {
+  position: absolute;
+  right: -300px;
+  bottom: -110px;
+  width: 500px;
+  height: 300px;
+  transform: rotate(140deg);
+  background-color: rgb(171, 185, 228);
+}
+
+section img {
+  width: 50%;
+  z-index: 2;
+}
+
+section p {
+  max-width: 500px;
+  font-size: 20px;
+  z-index: 2;
+}
+
+.list {
+  position: fixed;
+  top: 0px;
+  background-color:whitesmoke;
+  width: 100%;
+  text-align: center;
+  box-shadow: 2px 2px 2px gray;
+  font-size: 20px;
+  padding: 10px;
+  transform: scaleY(0);
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.list-active {
+    transform: scaleY(1);
+}
+
+@media(min-width:1023px){
+    .list-active {
+        transform: scale(0);
+    }
+}
+@media (max-width: 1023px) {
+  section img {
+    width: 150%;
+  }
+  .main-ul {
+    display: none;
+  }
+  .dec1 {
+    left: -600px;
+  }
+  p {
+    padding-top: 100px;
+  }
+  img {
+    padding-top: 50px;
+  }
+  h3 {
+    display: inline-block;
+  }
+}
+
+
+.container {
+  background-color: rgb(171, 185, 228);
+}
+
+.donation-area {
+  background-color: white;
+  padding: 20px;
+  height: 300px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 2px gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+.message {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  bottom: 40px;
+}
+
+.message h1 {
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.green {
+  background-color: rgb(129, 192, 99);
+  color: green;
+}
+
+.red {
+  background-color: rgb(202, 124, 124);
+  color: rgb(189, 0, 0);
+}
+
+input {
+  padding: 5px;
+}
+
+button {
+  padding: 5px;
+}
+
+.active {
+color: rgb(70, 108, 224);
+}
+
+.find {
+  background-color: royalblue;
+  border: none;
+  color: white;
+  padding: 7px 15px;
+  cursor: pointer;
+}
+
+.find:hover {
+  background-color: blue;
+}
