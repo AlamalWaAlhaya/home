@@ -2,6 +2,7 @@ function list() {
   document.getElementById("arrow").onclick = () => {
     document.getElementById("list").classList.toggle("list-active");
     document.getElementById("arrow").classList.toggle("arrow-anim");
+
   };
 }
 
@@ -14,8 +15,15 @@ let numbers = [
 ];
 let search = document.getElementById("search");
 
+
 document.getElementById("find").addEventListener("click", () => {
-  if (numbers.includes(search.value) && search.value != "") {
+  
+  const inputValue = search.value;
+  const englishValue = inputValue.replace(/[٠١٢٣٤٥٦٧٨٩]/g, function(match) {
+    return String.fromCharCode(match.charCodeAt(0) - 1632 + 48);
+  });
+
+  if (numbers.includes(englishValue) && englishValue != "") {
     document.getElementById(
       "message"
     ).innerHTML = `<h1 class = "green">يرجي التوجه الي جمعية الأمل و الحياة بالزرقا لاستلام أمانتك</h1>`;
