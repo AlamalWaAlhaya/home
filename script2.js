@@ -37,24 +37,24 @@ console.log(new_numbers)
       );
       if (document.getElementById("place").value == "volvo") {
         if (
-          (new_numbers.includes(`${search.value}`) && search.value != "") ||
-          (new_numbers.includes(`"${search.value}"`) && search.value != "")
+          (new_numbers.includes(`${englishValue}`) && englishValue != "") ||
+          (new_numbers.includes(`"${englishValue}"`) && englishValue != "")
         ) {
           document.getElementById(
             "message"
           ).innerHTML = `<h1 class = "green">تنورنا في جمعية الأمل والحياة لاستلام هديتكم.. كل عام وأنتم بخير</h1>`;
-          console.log(`${search.value}#`);
+          console.log(`${englishValue}#`);
         } else if (
-          (new_numbers.includes(`${search.value}#`) && search.value != "") ||
-          (new_numbers.includes(`"${search.value}"#`) && search.value != "")
+          (new_numbers.includes(`${englishValue}#`) && englishValue != "") ||
+          (new_numbers.includes(`"${englishValue}"#`) && englishValue != "")
         ) {
           document.getElementById(
             "message"
           ).innerHTML = `<h1 class = "green">تم الاستلام</h1>`;
-        } else if (search.value != "") {
+        } else if (englishValue != "") {
           document.getElementById(
             "message"
-          ).innerHTML = `<h1 class = "red"> كل عام وأنتم بخير ..لا يوجد هدايا حاليا لسيادتكم</h1>`;
+          ).innerHTML = `<h1 class = "gray"> كل عام وأنتم بخير ..لا يوجد هدايا حاليا لسيادتكم</h1>`;
         }
       }
     });

@@ -199,6 +199,10 @@ section p {
   background-color: rgb(202, 124, 124);
   color: rgb(189, 0, 0);
 }
+.gray {
+  background-color: gray;
+  /* color: gray; */
+}
 
 input {
   padding: 5px;
