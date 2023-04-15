@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alamal</title>
+    <title>Document</title>
   </head>
   <body class="container">
     <header id="head" dir="rtl" lang="ar">
@@ -22,7 +22,14 @@
       <div class="donation-area">
         <h2 dir="rtl" lang="ar">نافذة التوزيع</h2>
         <div>
-          <h2 dir="rtl">أدخل رقمك هنا</h2>
+          <h4 dir="rtl" lang="ar">اختر المحافظة</h4>
+          <select name="place" id="place" dir="rtl" lang="ar">
+            <option value="volvo">دمياط</option>
+            <option value="saab">المنيا</option>
+          </select>
+        </div>
+        <div>
+          <h4 dir="rtl" lang="ar">أدخل رقمك هنا</h4>
           <button class="find" id="find"><span>&#8656;</span></button>
           <input type="text" class="add-num" id="search" />
         </div>
@@ -35,6 +42,7 @@
       </ul>
     </div>
     <footer class="message" id="message"></footer>
+
     <script src="script2.js"></script>
   </body>
 </html>

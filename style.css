@@ -161,7 +161,7 @@ section p {
 .donation-area {
   background-color: white;
   padding: 20px;
-  height: 300px;
+  height: 400px;
   border-radius: 20px;
   box-shadow: 2px 2px 2px 2px gray;
   display: flex;
@@ -171,6 +171,9 @@ section p {
   margin-top: 20px;
 }
 
+.donation-area div {
+  width: 100%;
+}
 
 .message {
   padding: 20px;
@@ -199,6 +202,7 @@ section p {
 
 input {
   padding: 5px;
+  margin-top: 10px;
 }
 
 button {
@@ -219,4 +223,12 @@ color: rgb(70, 108, 224);
 
 .find:hover {
   background-color: blue;
+}
+
+select {
+  padding: 5px;
+  font-size: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
