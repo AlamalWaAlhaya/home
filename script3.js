@@ -13,7 +13,7 @@ let numbers = [];
 let new_numbers = [];
 let National_numbers = [];
 let chk_list=[];
-fetch("https://raw.githubusercontent.com/scriptvip/Ramadan/main/test.txt")
+fetch("https://raw.githubusercontent.com/scriptvip/Ramadan/main/all.txt")
   .then((response) => response.text())
   .then((data) => {
     numbers = data.split("\n");
