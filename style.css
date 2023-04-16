@@ -158,6 +158,23 @@ section p {
   background-color: rgb(171, 185, 228);
 }
 
+.donation-area::before {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ccc;
+  background-image: url('https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/images/logo.png');
+  background-size: cover;
+  background-position: center;
+  border: 2px solid black;
+
+}
+
 .donation-area {
   background-color: white;
   padding: 20px;
@@ -169,6 +186,8 @@ section p {
   justify-content: space-around;
   align-items: center;
   margin-top: 20px;
+  border: 2px solid black;
+
 }
 
 .donation-area div {
@@ -198,6 +217,11 @@ section p {
 .red {
   background-color: rgb(202, 124, 124);
   color: rgb(189, 0, 0);
+}
+
+.gray {
+  background-color: gray;
+  /* color: gray; */
 }
 
 input {

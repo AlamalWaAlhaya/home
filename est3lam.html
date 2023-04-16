@@ -1,26 +1,23 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
   <head>
     <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <body class="container">
     <header id="head" dir="rtl" lang="ar">
       <h2 lang="ar">جمعية الأمل و الحياة بالزرقا</h2>
       <ul dir="rtl" lang="ar" class="main-ul">
-        <a class="active" href="./index.html"><li>الرئيسية</li></a>
-        <a href="./tawzee3.html"><li dir="rtl" lang="ar">صفحة التوزيع</li></a>
-        <a href="./est3lam.html"><li dir="rtl" lang="ar">صفحة الاستعلام</li></a>
+        <a href="./index.html"><li>الرئيسية</li></a>
+        <a class="active" href="./tawzee3.html"
+          ><li dir="rtl" lang="ar" style="color:black;">صفحة التوزيع</li></a
+        >
+        <a href="./est3lam.html"><li dir="rtl" lang="ar" style="color:rgb(70, 108, 224);">صفحة الاستعلام</li></a>
       </ul>
       <h3 id="arrow"><span>&#8215;</span></h3>
-    </header>
-    <section class="main">
-      <img src="images/vector.png" alt="" />
-      <button><a href="./tawzee3.html">انتقل الي صفحة التوزيع</a></button>
       <div class="list" id="list">
         <ul dir="rtl" lang="ar" style="flex-direction: column">
           <a href="./index.html"><li>الرئيسية</li></a>
@@ -28,9 +25,20 @@
           <a href="./est3lam.html"><li dir="rtl" lang="ar">صفحة الاستعلام</li></a>
         </ul>
       </div>
-      <div class="dec1"></div>
-      <div class="dec2"></div>
+    </header>
+    <section>
+        <div class="donation-area" style="height: 200px;">
+	    <br>
+            <h2 dir="rtl" lang="ar"> الاستعلام عن الكود</h2>
+	    <br>
+            <div class="" dir="rtl" lang="ar" >
+            <h4>أدخل الرقم القومي</h4>
+            <input type="text" id="search"><button class="find" id="find"><span>&#8656;</span></button>
+
+            </div>
+        </div>
     </section>
-    <script src="script.js"></script>
+    <footer class="message" id="message"></footer>
+    <script src="script3.js"></script>
   </body>
 </html>

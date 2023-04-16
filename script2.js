@@ -62,7 +62,7 @@ fetch("https://raw.githubusercontent.com/scriptvip/Ramadan/main/test.txt")
         } else if (englishValue != "") {
           document.getElementById(
             "message"
-          ).innerHTML = `<h1 class = "red"> كل عام وأنتم بخير ..لا يوجد هدايا حاليا لسيادتكم</h1>`;
+          ).innerHTML = `<h1 class = "gray"> كل عام وأنتم بخير ..لا يوجد هدايا حاليا لسيادتكم</h1>`;
         }
       }
     });
