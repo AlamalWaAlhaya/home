@@ -47,7 +47,7 @@ fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/masr.txt")
         ) {
           document.getElementById(
             "message"
-          ).innerHTML = `<h1 class = "green">تنورنا في جمعية الأمل والحياة لاستلام هديتكم.. كل عام وأنتم بخير</h1>`;
+          ).innerHTML = `<h1 class = "green">تنورنا في جمعية الأمل والحياة لاستلام هديتكم "كارت مصر الخير " .. كل عام وأنتم بخير</h1>`;
           console.log(`${englishValue}#\r`);
         } else if (
           (chk_list.includes(`${englishValue}#\r`) && englishValue != "") ||
