@@ -19,7 +19,9 @@ let message = "";
 let chk_list = [];
 let chk_list2 = [];
 
-Promise.all([fetch("text2.txt"), fetch("text3.txt")])
+Promise.all([
+  fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/masr.txt"),
+  fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/bags.txt")])
   .then((responses) =>
     Promise.all(responses.map((response) => response.text()))
   )
@@ -67,7 +69,7 @@ Promise.all([fetch("text2.txt"), fetch("text3.txt")])
           chk_list.includes(`${englishValue}\r`)
         ) {
           message =
-            "تنورنا في جمعية الأمل والحياة لاستلام هديتكم'كارت مصر الخير'.. كل عام وأنتم بخير";
+            "تنورنا في جمعية الأمل والحياة لاستلام هديتكم 'كارت مصر الخير' .. كل عام وأنتم بخير";
         }
         
         /*else if (
@@ -82,7 +84,7 @@ Promise.all([fetch("text2.txt"), fetch("text3.txt")])
         chk_list2.includes(englishValue) ||
         chk_list2.includes(`${englishValue}\r`)
       ) {
-        message = "تنورنا في جمعية الأمل والحياة لاستلام هديتكم 'شنطة'.. كل عام وأنتم بخير ";
+        message = "تنورنا في جمعية الأمل والحياة لاستلام هديتكم 'شنطة' .. كل عام وأنتم بخير ";
       }
       
       /* else if (
@@ -99,7 +101,7 @@ Promise.all([fetch("text2.txt"), fetch("text3.txt")])
       } else {
         document.getElementById(
           "message"
-        ).innerHTML = `<h1 class = "red"> كل عام وأنتم بخير ..لا يوجد هدايا حاليا لسيادتكم</h1>`;
+        ).innerHTML = `<h1 class = "gray"> كل عام وأنتم بخير ..لا يوجد هدايا حاليا لسيادتكم</h1>`;
       }}
     });
   })
