@@ -68,7 +68,7 @@ Promise.all([
           chk_list.includes(`'${englishValue}'`)
         ) {
           message =
-            "تنورنا في جمعية الأمل والحياة لاستلام هديتكم'كارت مصر الخير'.. كل عام وأنتم بخير";
+            "تنورنا في جمعية الأمل والحياة لاستلام هديتكم 'كارت مصر الخير' .. كل عام وأنتم بخير";
         }
       
         /*else if (
@@ -83,7 +83,7 @@ Promise.all([
         chk_list2.includes(englishValue) ||
         chk_list2.includes(`'${englishValue}'`)
       ) {
-        message = "تنورنا في جمعية الأمل والحياة لاستلام هديتكم 'شنطة'.. كل عام وأنتم بخير ";
+        message = "تنورنا في جمعية الأمل والحياة لاستلام هديتكم 'شنطة' .. كل عام وأنتم بخير ";
       }
       
       /* else if (
@@ -100,7 +100,7 @@ Promise.all([
       } else {
         document.getElementById(
           "message"
-        ).innerHTML = `<h1 class = "red"> كل عام وأنتم بخير ..لا يوجد هدايا حاليا لسيادتكم</h1>`;
+        ).innerHTML = `<h1 class = "gray"> كل عام وأنتم بخير ..لا يوجد هدايا حاليا لسيادتكم</h1>`;
       }}
     });
   })
