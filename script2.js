@@ -19,9 +19,7 @@ let message = "";
 let chk_list = [];
 let chk_list2 = [];
 
-Promise.all([
-  fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/masr.txt"),
-  fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/bags.txt")])
+Promise.all([fetch("text2.txt"), fetch("text3.txt")])
   .then((responses) =>
     Promise.all(responses.map((response) => response.text()))
   )
@@ -38,8 +36,9 @@ Promise.all([
       if (array2[i].length > 10) National_numbers2.push(array2[i]);
       else code2.push(array2[i]);
     }
-    console.log(code2)
-    console.log(National_numbers2)
+
+    
+
     document.getElementById("find").addEventListener("click", () => {
       message = "";
       const inputValue = search.value;
@@ -65,12 +64,12 @@ Promise.all([
 
         if (
           chk_list.includes(englishValue) ||
-          chk_list.includes(`'${englishValue}'`)
+          chk_list.includes(`${englishValue}\r`)
         ) {
           message =
-            "تنورنا في جمعية الأمل والحياة لاستلام هديتكم 'كارت مصر الخير' .. كل عام وأنتم بخير";
+            "تنورنا في جمعية الأمل والحياة لاستلام هديتكم'كارت مصر الخير'.. كل عام وأنتم بخير";
         }
-      
+        
         /*else if (
         chk_list.includes(
           `${englishValue}#` || array1.includes(`'${englishValue}#'`)
@@ -81,9 +80,9 @@ Promise.all([
       
       if (
         chk_list2.includes(englishValue) ||
-        chk_list2.includes(`'${englishValue}'`)
+        chk_list2.includes(`${englishValue}\r`)
       ) {
-        message = "تنورنا في جمعية الأمل والحياة لاستلام هديتكم 'شنطة' .. كل عام وأنتم بخير ";
+        message = "تنورنا في جمعية الأمل والحياة لاستلام هديتكم 'شنطة'.. كل عام وأنتم بخير ";
       }
       
       /* else if (
@@ -100,7 +99,7 @@ Promise.all([
       } else {
         document.getElementById(
           "message"
-        ).innerHTML = `<h1 class = "gray"> كل عام وأنتم بخير ..لا يوجد هدايا حاليا لسيادتكم</h1>`;
+        ).innerHTML = `<h1 class = "red"> كل عام وأنتم بخير ..لا يوجد هدايا حاليا لسيادتكم</h1>`;
       }}
     });
   })
