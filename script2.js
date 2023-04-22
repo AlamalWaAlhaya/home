@@ -1,109 +1,103 @@
-function list() {
-  document.getElementById("arrow").onclick = () => {
-    document.getElementById("list").classList.toggle("list-active");
-    document.getElementById("arrow").classList.toggle("arrow-anim");
-  };
-}
 
-list();
+function list() { 
+    document.getElementById("arrow").onclick = () => { 
+      document.getElementById("list").classList.toggle("list-active"); 
+      document.getElementById("arrow").classList.toggle("arrow-anim"); 
+    }; 
+  } 
+   
+  list();
 
-let search = document.getElementById("search");
+const button = document.getElementById("find");
+const select = document.getElementById('way');
+let search = document.getElementById("search"); 
 
-let array1 = [];
-let array2 = [];
-let National_numbers = [];
-let code = [];
-let National_numbers2 = [];
-let code2 = [];
-let message = "";
-let chk_list = [];
-let chk_list2 = [];
+let file;
+let row ;
+let value;
 
-Promise.all([
-  fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/masr.txt"),
-  fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/bags.txt")])
-  .then((responses) =>
-    Promise.all(responses.map((response) => response.text()))
-  )
-  .then((texts) => {
-    array1 = texts[0].split("\n").flatMap((row) => row.split(","));
-    array2 = texts[1].split("\n").flatMap((row) => row.split(","));
+let messages = ["كارت مصر الخير" , "شنطة"];
+let msg = [];
+let final_msg = "";
 
-    for (let i = 0; i < array1.length; ++i) {
-      if (array1[i].length > 10) National_numbers.push(array1[i]);
-      else code.push(array1[i]);
+let searchTerm = search.value;
+
+
+
+
+
+button.addEventListener("click", function() {
+
+  // init values for new search ...
+  msg = [];
+  searchTerm = search.value;
+
+  // replaceing arabic numbers
+  searchTerm = searchTerm.replace(
+    /[٠١٢٣٤٥٦٧٨٩]/g,
+    function (match) {
+      return String.fromCharCode(match.charCodeAt(0) - 1632 + 48);
+    }
+  );
+
+  // making sure the select is True : 
+    const length = search.value.length;
+
+    if (length < 5) {
+      select.selectedIndex = 0;
+    } else {
+      select.selectedIndex = 1;
     }
 
-    for (let i = 0; i < array2.length; ++i) {
-      if (array2[i].length > 10) National_numbers2.push(array2[i]);
-      else code2.push(array2[i]);
-    }
-
-    
-
-    document.getElementById("find").addEventListener("click", () => {
-      message = "";
-      const inputValue = search.value;
-      const englishValue = inputValue.replace(
-        /[٠١٢٣٤٥٦٧٨٩]/g,
-        function (match) {
-          return String.fromCharCode(match.charCodeAt(0) - 1632 + 48);
-        }
-      );
-
-      if (
-        document.getElementById("place").value == "volvo" &&
-        englishValue != ""
-      ) {
-
-        if (document.getElementById("way").value == "code") {
-          chk_list = code;
-          chk_list2 = code2;
-        } else if (document.getElementById("way").value == "num") {
-          chk_list = National_numbers;
-          chk_list2 = National_numbers2;
-        }
-
-        if (
-          chk_list.includes(englishValue) ||
-          chk_list.includes(`${englishValue}\r`)
-        ) {
-          message =
-            "تنورنا في جمعية الأمل والحياة لاستلام هديتكم 'كارت مصر الخير' .. كل عام وأنتم بخير";
-        }
-        
-        /*else if (
-        chk_list.includes(
-          `${englishValue}#` || array1.includes(`'${englishValue}#'`)
-        )
-      ) {
-        message = "تم الاستلام";
-      }*/
+  // fetching data ...
+  Promise.all([
+      fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/masr.txt"),
+      fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/bags.txt"),
+      // fetch('https://example.com/data3.txt')
+    ])
+      .then(responses => Promise.all(responses.map(response => response.text())))
+      .then((files) => {
       
-      if (
-        chk_list2.includes(englishValue) ||
-        chk_list2.includes(`${englishValue}\r`)
-      ) {
-        message = "تنورنا في جمعية الأمل والحياة لاستلام هديتكم 'شنطة' .. كل عام وأنتم بخير ";
+      // getting every file out of files array ; file_c == file counter
+      for (let file_c = 0 ; file_c < files.length; file_c++){
+          file = files[file_c].split("\n");
+
+          // looping throw the file rows ; row_c == row counter
+          for (let row_c = 0 ; row_c < file.length ; row_c ++){
+              row = file[row_c].split(",");
+              // looping throw each value in the row ; row_c == row counter
+              for(let value_c = 0 ; value_c < row.length ; value_c++){
+                  value = row[value_c];
+                  value =  value.replace(/\r/g, "");
+
+                  // checking if we found the searching term
+                  if (value == searchTerm & value != ""){
+                    msg.push(messages[file_c]) ;  
+                    console.log(msg , value , searchTerm);
+                    
+                  } 
+                  
+              }
+          }
+          
       }
-      
-      /* else if (
-        chk_list2.includes(`${englishValue}#`) ||
-        chk_list2.includes(`'${englishValue}#'`)
-      ) {
-        message = "تم الاستلام";
-      }*/
-
-      if (message != "") {
-        document.getElementById(
+      final_msg = msg.join("");
+      if (final_msg != ""){
+      document.getElementById(
           "message"
-        ).innerHTML = `<h1 class = "green">${message}</h1>`;
-      } else {
+        ).innerHTML = `<h1 class = "green" >تنورنا في جمعية الأمل والحياة لاستلام هديتكم "${msg}" .. كل عام وأنتم بخير </h1>`;
+      }else{
         document.getElementById(
           "message"
         ).innerHTML = `<h1 class = "gray"> كل عام وأنتم بخير ..لا يوجد هدايا حاليا لسيادتكم</h1>`;
-      }}
-    });
-  })
-  .catch((error) => console.error(error));
+      }
+      console.log(msg);
+  }
+  )
+  
+
+  .catch(error => console.error(error));
+
+
+});
 
