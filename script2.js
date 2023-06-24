@@ -16,7 +16,7 @@ let file;
 let row ;
 let value;
 
-let messages = ["كارت مصر الخير" , "شنطة"];
+let messages = ["تنورنا لاستلام لحمتك غدا الأحد 25-6-2023" , "تنورنا أول أيام عيد الأضحى لاستلام لحمتك" , "تنورنا ثاني أيام عيد الأضحى لاستلام لحمتك" ];
 let msg = [];
 let final_msg = "";
 
@@ -51,8 +51,9 @@ button.addEventListener("click", function() {
 
   // fetching data ...
   Promise.all([
-      // fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/sheets/masr.txt"),
-      // fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/sheets/bags.txt"),
+      fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/sheets/1.txt"),
+      fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/sheets/2.txt"),
+      fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/sheets/3.txt"),
       // fetch('https://example.com/data3.txt')
     ])
       .then(responses => Promise.all(responses.map(response => response.text())))
@@ -85,7 +86,7 @@ button.addEventListener("click", function() {
       if (final_msg != ""){
       document.getElementById(
           "message"
-        ).innerHTML = `<h1 class = "green" >تنورنا في جمعية الأمل والحياة لاستلام هديتكم "${msg}" .. كل عام وأنتم بخير </h1>`;
+        ).innerHTML = `<h1 class = "green" >"${msg}" .. كل عام وأنتم بخير </h1>`;
       }else{
         document.getElementById(
           "message"
