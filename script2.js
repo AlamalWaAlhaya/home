@@ -52,8 +52,6 @@ button.addEventListener("click", function() {
   // fetching data ...
   Promise.all([
       fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/sheets/1.txt"),
-      fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/sheets/2.txt"),
-      fetch("https://raw.githubusercontent.com/AlamalWaAlhaya/home/main/sheets/3.txt"),
       // fetch('https://example.com/data3.txt')
     ])
       .then(responses => Promise.all(responses.map(response => response.text())))
